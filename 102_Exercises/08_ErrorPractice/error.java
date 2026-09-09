@@ -5,7 +5,7 @@ class error {
         System.out.println("What'd you do this weekend?");
 		System.out.println("I watched a movie!");
 
-		int new number count = 125;
+		int count = 125;
 		System.out.println(count);
 
 		double num1 = 12.2;
