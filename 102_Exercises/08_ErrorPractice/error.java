@@ -10,7 +10,8 @@ class error {
 
 		double num1 = 12.2;
 		double num2 = 14.3;
-		double answer = num1 * num2 + answer;
+		double answer=10;
+		answer = num1 * num2+answer;
 		
 		System.out.println(answer);
 
