@@ -12,7 +12,7 @@ class error {
 		int num2 = 14.3;
 		answer = num1 * num2 + answer;
 		
-		System.out.println(answer)
+		System.out.println(answer);
 
 		System.out.println("I now have 0 errors!!!");		
 	}
