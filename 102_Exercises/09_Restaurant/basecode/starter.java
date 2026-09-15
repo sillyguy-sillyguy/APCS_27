@@ -29,7 +29,8 @@ class starter {
 		double I1price = sc.nextDouble();
 		System.out.println("How many "+I1Name+" would you like?");
 		double I1quant = sc.nextDouble();
-		System.out.println("Added "+I1quant+"x "+I1Name+" to your order! ($"+(I1price*I1quant)+")");
+		double I1tot = (I1price*I1quant);
+		System.out.println("Added "+I1quant+"x "+I1Name+" to your order! ($"+I1tot+")");
 		System.out.println();
 		System.out.println("--- Item #2 ---");
 		Scanner bc = new Scanner(System.in);
@@ -40,7 +41,8 @@ class starter {
 		double I2price = bc.nextDouble();
 		System.out.println("How many "+I2Name+" would you like?");
 		double I2quant = bc.nextDouble();
-		System.out.println("Added "+I2quant+"x "+I2Name+" to your order! ($"+(I2price*I2quant)+")");
+		double I2tot = (I2price*I2quant);
+		System.out.println("Added "+I2quant+"x "+I2Name+" to your order! ($"+I2tot+")");
 		System.out.println();
 		System.out.println("--- Item #3 ---");
 		Scanner dc = new Scanner(System.in);
@@ -51,7 +53,14 @@ class starter {
 		double I3price = dc.nextDouble();
 		System.out.println("How many "+I3Name+" would you like?");
 		double I3quant = dc.nextDouble();
-		System.out.println("Added "+I3quant+"x "+I3Name+" to your order! ($"+(I3price*I3quant)+")");
+		double I3tot = (I3price*I3quant);
+		System.out.println("Added "+I3quant+"x "+I3Name+" to your order! ($"+I3tot+")");
+		System.out.print("Nice choices! What tip percentage would you like to leave?(ex: 15, 18, 20): ");
+		double Tip = dc.nextDouble();
+		double Totalnotip = (I3tot+I2tot+I1tot);
+		Tip = Tip/100;
+		double TotalWtip = ((Totalnotip*Tip)+Totalnotip);
+		double Tax = 
 
 
 
