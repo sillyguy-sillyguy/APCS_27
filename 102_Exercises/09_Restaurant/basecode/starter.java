@@ -38,9 +38,23 @@ class starter {
 		String I2Name = bc.nextLine();
 		System.out.print("Price of "+I2Name+" ($):");
 		double I2price = bc.nextDouble();
-		System.out.println("How many "+I2Name+" would you like?")
+		System.out.println("How many "+I2Name+" would you like?");
 		double I2quant = bc.nextDouble();
-		
+		System.out.println("Added "+I2quant+"x "+I2Name+" to your order! ($"+(I2price*I2quant)+")");
+		System.out.println();
+		System.out.println("--- Item #3 ---");
+		Scanner dc = new Scanner(System.in);
+		//Created because of the same problem as last time
+		System.out.print("Item Name: ");
+		String I3Name = dc.nextLine();
+		System.out.print("Price of "+I3Name+" ($):");
+		double I3price = dc.nextDouble();
+		System.out.println("How many "+I3Name+" would you like?");
+		double I3quant = dc.nextDouble();
+		System.out.println("Added "+I3quant+"x "+I3Name+" to your order! ($"+(I3price*I3quant)+")");
+
+
+
 
 	}
 }
