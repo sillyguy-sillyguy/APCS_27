@@ -57,10 +57,36 @@ class starter {
 		System.out.println("Added "+I3quant+"x "+I3Name+" to your order! ($"+I3tot+")");
 		System.out.print("Nice choices! What tip percentage would you like to leave?(ex: 15, 18, 20): ");
 		double Tip = dc.nextDouble();
+		System.out.println();
+		System.out.println("============================================");
+		System.out.println("	    "+RSTName+ " - Menu For Today");
+		System.out.println("============================================");
+		System.out.println("Owner: "+IRLName);
+		System.out.println("--------------------------------------------");
+		System.out.println("Item		Qty 	Price");
+		System.out.println("--------------------------------------------");
+		System.out.println(I1Name+" 		"+I1quant+"	  "+I1tot);
+		System.out.println(I2Name+" 		"+I2quant+"	  "+I2tot);
+		System.out.println(I3Name+" 		"+I3quant+"	  "+I3tot);
 		double Totalnotip = (I3tot+I2tot+I1tot);
-		Tip = Tip/100;
-		double TotalWtip = ((Totalnotip*Tip)+Totalnotip);
-		double Tax = 
+		System.out.println("--------------------------------------------");
+		double Tax = 9.75;
+		double Taxp = Tax/100;
+		double TotalWtax = (Totalnotip*Taxp);
+		double Tipx = Tip/100;
+		double Totaltip = (Totalnotip*Tipx);
+		System.out.println("Subtotal:			"+Totalnotip);
+		System.out.println("Tax ("+Tax+"%):			"+TotalWtax);
+		System.out.println("Tip:				"+Tip);
+		System.out.println("Tip Amount:			"+Totaltip);
+		double TRUETOTAL = (TotalWtax+Totaltip+Totalnotip);
+		System.out.println("============================================");
+		System.out.println("TOTAL:			$"+TRUETOTAL);
+		System.out.println("============================================");
+		System.out.println();
+		System.out.println("Thanks for eating at "+RSTName+"!");
+		System.out.println("Come back soon -- we'll always have a byte for you!");
+		
 
 
 
