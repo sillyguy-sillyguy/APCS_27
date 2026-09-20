@@ -76,7 +76,7 @@ public class starter {
         //         fighter's stats plus move power:
         //         heroPower = sqrt(rizzPower^2 + sigmaSpeed^2 +
         //                          brainrotEnergy^2) + movePower
-        double heroPower = sqrt(rizzPower^2+sigmaSpeed^2+brainrotEnergy^2)+movePower;
+        double heroPower = Math.sqrt(Math.pow(rizzPower,2)+Math.pow(sigmaSpeed,2)+Math.pow(brainrotEnergy,2))+movePower;
 
 
         // TODO 5: Roll fate! Create:
