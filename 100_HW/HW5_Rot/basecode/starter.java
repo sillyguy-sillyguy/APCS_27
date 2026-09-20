@@ -126,11 +126,13 @@ public class starter {
         
 
 
+
         // TODO 11: Tally the reward. Create:
         //   - int damageDealt: rivalHealth minus rivalHealthRemaining
         //   - int bonusPoints: damageDealt, but capped at a maximum
         //     of 100 extra points.
         //   - int totalRizz: basePoints + bonusPoints
+        
 
 
         // ============================================================
