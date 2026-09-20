@@ -123,6 +123,7 @@ public class starter {
         // ============================================================
         // TODO 10: Create an int basePoints: a random whole number
         //          from 50 to 300 (Not inclusive of 300).
+        int basePoints = (int)(Math.random()*250+50);
         
 
 
@@ -132,6 +133,9 @@ public class starter {
         //   - int bonusPoints: damageDealt, but capped at a maximum
         //     of 100 extra points.
         //   - int totalRizz: basePoints + bonusPoints
+        int damageDealt = rivalHealth-rivalHealthRemaining;
+        int bonusPoints = Math.min(damageDealt,100);
+        int totalRizz = basePoints+bonusPoints;
         
 
 
@@ -143,43 +147,25 @@ public class starter {
         System.out.println(heroName + "  |  trained " + trainingHours + " hours at the gym");
         System.out.println("RIZZ "+rizzPower+"  SPEED "+sigmaSpeed+"  BRAINROT ENERGY "+brainrotEnergy);
         System.out.println("Signature move: "+moveName+" (power "+movePower+")");
-        
-        
-        /*  Delete for SECTION 1
-        System.out.println("  RIZZ " + rizzPower + "  SPEED " + sigmaSpeed + "  BRAINROT ENERGY " + brainrotEnergy);
-        */
-
-        /* Delete for SECTION 2
-        System.out.println("Signature move: " + moveName + " (power " + movePower + ")");
-        */
-       
-        /* Delete for SECTION 3
         System.out.println();
         System.out.println("BOMBARDIRO CROCODILO  |  HP " + rivalHealth + "  POWER " + rivalPower + "  DEFENSE " + rivalDefense);
         System.out.println();
-        */
-
-        /* Delete for SECTION 4
         System.out.println("Fighter power rating: " + heroPower);
         System.out.println("Fate roll: " + fateRoll + "  (maximum rizz achieved? " + maxRizz + ")");
-        System.out.println(heroName + " lands " + finalDamage + " damage with " + moveName + "!");
+        System.out.println(heroName + " lands "+ finalDamage + " damage with " + moveName + "!");
         System.out.println("Rival health remaining: " + rivalHealthRemaining);
         System.out.println();
-        */
-
-        /* Delete for SECTION 5
         System.out.println("Rival fury roll: " + rivalFuryRoll);
         System.out.println("BOMBARDIRO CROCODILO deals " + rivalDamage + " damage!");
         System.out.println(heroName + "'s health remaining: " + heroHealthRemaining);
         System.out.println();
-        */
-
-        /* Delete for SECTION 6
         System.out.println("----- THE RIZZ REWARD -----");
         System.out.println("Base points earned: " + basePoints);
         System.out.println("Damage bonus: " + bonusPoints);
         System.out.println("TOTAL RIZZ POINTS: " + totalRizz);
-        */
+        
+
+       
 
     }
 }
