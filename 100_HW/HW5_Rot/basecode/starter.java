@@ -93,10 +93,12 @@ public class starter {
         //   - int finalDamage: rawDamage minus rivalDefense, but
         //     never less than 10. (Think about how you can use Math.max()).
         int rawDamage = (int)(heroPower*fateRoll);
+        int finalDamage = Math.max(10,rawDamage-rivalDefense);
 
 
         // TODO 7: Create an int rivalHealthRemaining: rivalHealth
         //         minus finalDamage, but never less than 0.
+        int rivalHealthRemaining = Math.max(0,rivalHealth-finalDamage);
 
 
         // ============================================================
@@ -107,18 +109,21 @@ public class starter {
         //     (but not including) 1.5 -- the rival's fury multiplier.
         //   - int rivalDamage: rivalPower * rivalFuryRoll, cast
         //     to (int).
+        double rivalFuryRoll = Math.random()*0.5+1.0;
+        int rivalDamage = (int)(rivalPower*rivalFuryRoll);
 
 
         // TODO 9: Create an int heroHealthRemaining: your fighter
         //         starts each clash at 100 health. Subtract
         //         rivalDamage, but never let it drop below 0.
-
+        int heroHealthRemaining = Math.max(0,100-rivalDamage);
 
         // ============================================================
         // SECTION 6: The Rizz Reward
         // ============================================================
         // TODO 10: Create an int basePoints: a random whole number
         //          from 50 to 300 (Not inclusive of 300).
+        
 
 
         // TODO 11: Tally the reward. Create:
