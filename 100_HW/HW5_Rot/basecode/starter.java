@@ -34,10 +34,7 @@ public class starter {
         int rizzPower = (int)(Math.random()*20+10+trainingBonus);
         int sigmaSpeed = (int)(Math.random()*20+10);
         int brainrotEnergy = (int)(Math.random()*20+5+(trainingBonus/2));
-        System.out.println("Here is "+heroName+"'s stats");
-        System.out.println("Rizz Power: "+ rizzPower);
-        System.out.println("Sigma Speed: "+sigmaSpeed);
-        System.out.println("Brainrot Energy: "+brainrotEnergy);
+        
 
         // TODO 1: Roll your fighter's stats using Math.random(). Create:
         //   - int rizzPower:      random 10-30, PLUS trainingBonus (Not inclusive of 30)
@@ -51,7 +48,6 @@ public class starter {
         System.out.print("Give " + heroName + "'s signature move a name: ");
         String moveName = sc.nextLine();
         int movePower = (int)(Math.random()*15+5);
-        System.out.println("The attack power of "+moveName+" is: "+movePower);
 
         // TODO 2: Create an int movePower: a random whole number from
         //         5 to 20 (Not inclusive of 20).
@@ -63,7 +59,11 @@ public class starter {
         System.out.println();
         System.out.println("Suddenly, BOMBARDIRO CROCODILO descends from the sky!");
 
+
         // TODO 3: Roll the rival's stats using Math.random(). Create:
+        int rivalHealth = (int)(Math.random()*70+80);
+        int rivalPower = (int)(Math.random()*20+15);
+        int rivalDefense = (int)(Math.random()*15+5);
         //   - int rivalHealth:  random 80-150  (Not inclusive of 150)
         //   - int rivalPower:   random 15-35   (Not inclusive of 35)
         //   - int rivalDefense: random 5-20    (Not inclusive of 20)
@@ -76,6 +76,7 @@ public class starter {
         //         fighter's stats plus move power:
         //         heroPower = sqrt(rizzPower^2 + sigmaSpeed^2 +
         //                          brainrotEnergy^2) + movePower
+        double heroPower = sqrt(rizzPower^2+sigmaSpeed^2+BrainrotEnergy^2)+movePower;
 
 
         // TODO 5: Roll fate! Create:
@@ -83,12 +84,15 @@ public class starter {
         //     not including) 2.0 - your luck multiplier this clash.
         //   - boolean maxRizz: true when fateRoll is greater than 1.5
         //     (store the comparison directly -- no if!).
+        double fateRoll = Math.random()*1.5+0.5;
+        boolean maxRizz = true(fateRoll is greater than 1.5);
 
 
         // TODO 6: Resolve the damage. Create:
         //   - int rawDamage: heroPower * fateRoll, cast to (int)
         //   - int finalDamage: rawDamage minus rivalDefense, but
         //     never less than 10. (Think about how you can use Math.max()).
+        int rawDamage = (int)(heroPower*fateRoll);
 
 
         // TODO 7: Create an int rivalHealthRemaining: rivalHealth
@@ -130,6 +134,8 @@ public class starter {
         System.out.println();
         System.out.println("----- BATTLE REPORT -----");
         System.out.println(heroName + "  |  trained " + trainingHours + " hours at the gym");
+        System.out.println("RIZZ "+rizzPower+"  SPEED "+sigmaSpeed+"  BRAINROT ENERGY "+brainrotEnergy);
+        System.out.println("Signature move: "+moveName+" (power "+movePower+")");
         
         
         /*  Delete for SECTION 1
