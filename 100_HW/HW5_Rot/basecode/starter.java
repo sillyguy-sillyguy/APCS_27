@@ -31,6 +31,13 @@ public class starter {
         int trainingHours = sc.nextInt();
         sc.nextLine();
         int trainingBonus = trainingHours * 3;
+        int rizzPower = (int)(Math.random()*20+10+trainingBonus);
+        int sigmaSpeed = (int)(Math.random()*20+10);
+        int brainrotEnergy = (int)(Math.random()*20+5+(trainingBonus/2));
+        System.out.println("Here is "+heroName+"'s stats");
+        System.out.println("Rizz Power: "+ rizzPower);
+        System.out.println("Sigma Speed: "+sigmaSpeed);
+        System.out.println("Brainrot Energy: "+brainrotEnergy);
 
         // TODO 1: Roll your fighter's stats using Math.random(). Create:
         //   - int rizzPower:      random 10-30, PLUS trainingBonus (Not inclusive of 30)
@@ -43,6 +50,8 @@ public class starter {
         // ============================================================
         System.out.print("Give " + heroName + "'s signature move a name: ");
         String moveName = sc.nextLine();
+        int movePower = (int)(Math.random()*15+5);
+        System.out.println("The attack power of "+moveName+" is: "+movePower);
 
         // TODO 2: Create an int movePower: a random whole number from
         //         5 to 20 (Not inclusive of 20).
