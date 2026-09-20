@@ -76,7 +76,7 @@ public class starter {
         //         fighter's stats plus move power:
         //         heroPower = sqrt(rizzPower^2 + sigmaSpeed^2 +
         //                          brainrotEnergy^2) + movePower
-        double heroPower = sqrt(rizzPower^2+sigmaSpeed^2+BrainrotEnergy^2)+movePower;
+        double heroPower = sqrt(rizzPower^2+sigmaSpeed^2+brainrotEnergy^2)+movePower;
 
 
         // TODO 5: Roll fate! Create:
@@ -85,7 +85,7 @@ public class starter {
         //   - boolean maxRizz: true when fateRoll is greater than 1.5
         //     (store the comparison directly -- no if!).
         double fateRoll = Math.random()*1.5+0.5;
-        boolean maxRizz = true(fateRoll is greater than 1.5);
+        boolean maxRizz = fateRoll > 1.5;
 
 
         // TODO 6: Resolve the damage. Create:
