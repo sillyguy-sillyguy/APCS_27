@@ -46,16 +46,18 @@ class starter {
 			if(YES.equalsIgnoreCase("Yes")||YES.equalsIgnoreCase("Y")){
 				System.out.print("You have $"+money+". How much would you like to wager? ");
 				int wager = sc.nextInt();
+				sc.nextLine();
 
 				while(wager>money){
 					System.out.print("You only have $"+money+"! Please enter a smaller number: ");
 					wager = sc.nextInt();
+					sc.nextLine();
 				}
 				money -= wager;
 				System.out.println();
-				int slot1 = (int)(Math.random()*11);
-				int slot2 = (int)(Math.random()*11);
-				int slot3 = (int)(Math.random()*11);
+				int slot1 = (int)(Math.random()*10+1);
+				int slot2 = (int)(Math.random()*10+1);
+				int slot3 = (int)(Math.random()*10+1);
 				System.out.println("Great! Let's play!!!");
 				System.out.println("Your rolls are: ");
 				System.out.println("-----------------------");
@@ -81,6 +83,7 @@ class starter {
 						System.out.println("You now have $"+money+".");
 						System.out.println();
 						System.out.println("-------------------------------------------------");
+						System.out.println();
 					}
 				}
 				
