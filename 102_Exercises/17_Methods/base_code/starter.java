@@ -8,12 +8,40 @@ import java.util.Random;
 
 
 class starter {
-	// The goal of the first method is to give back whether the year given is a leap year or not. 2004 is a leap year.
+	public static void printer(String b){
+		System.out.println(b);
+		return;
+	}
+	public static boolean isLeapYear(int a){
+		int hardboiledegg = a%4;
+		int sunnysideupegg = a%100;
+		int omeletteegg = a%400;
+		if((hardboiledegg==0)&&((sunnysideupegg!=0)||(omeletteegg==0))){
+			return true;
+		} else{
+			return false;
+		}
+	}
+	public static int getDigitSum(int c){
+		int s = c%10;
+		int s10 = (c/10)%10;
+		int s100 = (c/100)%10;
+		int s1000 = (c/1000)%10;
+		int s10000 = (c/10000);
+		c = s+s10+s100+s1000+s10000;
+		return c;
+	}
 
-	// The goal of the second method is to add all the digits of a number up. Ex: 12345 has a total of 15.
-
-	// The goal of the third method is to check if 3 numbers are consecutive. 15 16 17 are consecutive. It will print if they are or not.
-	// Assume that the first number is always the smallest and the third number is always the largest.
+	public static boolean printIfConsecutive(int d, int e, int f){
+		d = d+1;
+		f = f-1;
+		if((d==e)&&(e==f)){
+			return true;
+		} else{
+			return false;
+		}
+		
+	}
 
 	public static void main(String args[]) {
 		System.out.println("----------------------------------------");
@@ -43,7 +71,11 @@ class starter {
 		System.out.println("Enter a number");
 		int num3 = sc.nextInt();
 		System.out.println();
-		printIfConsecutive(num1, num2, num3);
+		if(printIfConsecutive(num1, num2, num3)==true){
+			printer("The numbers are consecutive!!!");
+		} else{
+			printer("The numbers are not consecutive!!!");
+		}
 		System.out.println();
 		System.out.println("----------------------------------------");
 	}
