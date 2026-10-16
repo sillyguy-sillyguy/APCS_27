@@ -13,11 +13,70 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
-
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Welcome to Type Quest!");
+		System.out.println("It is currently "+getTime()+" and we're ready to play!");
+		System.out.println("Given a sentence, type it as fast as possible!");
+		System.out.println();
+		while(true){
+		System.out.println("------------------------------------------------------");
+		System.out.println("Would you like to:");
+		System.out.println("1 - Play random");
+		System.out.println("2 - Play set");
+		System.out.println("3 - Quit");
+		int option = sc.nextInt();
+		if(option==3){
+			break;
+		}else{
+		if(option==1){
+			System.out.println("You've chosen to randomly select a sentence.");
+			System.out.println();
+			System.out.println("---------------Your sentence is:---------------");
+			String sentenceChosen = getSentence();
+			System.out.println(sentenceChosen);
+			System.out.println("-----------------------------------------------");
+			System.out.println();
+			countdown();
+			String spokenFor = sc.nextLine();
+			startTimer();
+			String typedSentence = sc.nextLine();
+			System.out.println("Nice job! Here is your result!");
+			double typeTime = endTimer();
+			System.out.println("Time: "+typeTime);
+			System.out.println("Errors: "+compareSentences(sentenceChosen,typedSentence)+"/"+lettersInSentence(sentenceChosen)+" letters");
+			double LPM = (lettersInSentence(typedSentence)/typeTime)*60;
+			System.out.println(LPM+" Letters per minute");
+			double WPM = (wordsInSentence(typedSentence)/typeTime)*60;
+			System.out.println(WPM+" words per minute");
+		} else{
+			if(option==2){
+				System.out.println("Please enter what number sentence you'd like to play:");
+				int Selection = sc.nextInt();
+				System.out.println();
+				System.out.println("---------------Your sentence is:---------------");
+				String sentenceChosen = getSentence(Selection);
+				System.out.println(sentenceChosen);
+				System.out.println("-----------------------------------------------");
+				System.out.println();
+				countdown();
+				String spokenFor = sc.nextLine();
+				startTimer();
+				String typedSentence = sc.nextLine();
+				System.out.println("Nice job! Here is your result!");
+				double typeTime = endTimer();
+				System.out.println("Time: "+typeTime);
+				System.out.println("Errors: "+compareSentences(sentenceChosen,typedSentence)+"/"+lettersInSentence(sentenceChosen)+" letters");
+				double LPM = (lettersInSentence(typedSentence)/typeTime)*60;
+				System.out.println(LPM+" Letters per minute");
+				double WPM = (wordsInSentence(typedSentence)/typeTime)*60;
+				System.out.println(WPM+" words per minute");
+			} else{
+				System.out.println("You did not select correctly, please try again.");
+			}
+		}
+		}
 	}
-
+	}
 	// This method returns the local current time as a String
 	public static String getTime(){
 		LocalTime now = LocalTime.now();
