@@ -9,12 +9,15 @@ import java.util.Random;
 
 
 public class BaseClass {
-	int example = 0;
+	int ind = 0;
+	int[] x = new int[10];
 
 	public BaseClass() {
-		
-		
+		ind = 0;
+		x[0] = 9;
+		while(ind = 0; ind < 10) {
+			x[ind] = x[0]-ind;
 	}
-
+	}
 }
 
