@@ -13,7 +13,6 @@ class starter {
         System.out.println("Please enter a difficulty level: 1, 2, or 3");
         int diff = sc.nextInt();
         sc.nextLine();
-
         /* 
             Basics of the game:
             - Given a set of words, the player must memorize the colors
@@ -24,68 +23,251 @@ class starter {
         */
 
         //  Given the Colors class, use the following method calls to help this program.
-        Colors.print("Test 1");         // This prints out the value given without a new line   
-        Colors.println("Test 2");       // This prints out the value given then a new line
-        Colors.print("Test 3", "BRIGHT_Red");       // 2 String parameters: Value, Color of text
-        Colors.println("Test 4", "BRIGHT_Red");     // 2 String parameters: Value, Color of text WITH a new line after
-        Colors.print("Test 5", "BRIGHT_Red", "BG_Blue");         // 3 String parameters: Value, Color of text, Color of background
-        Colors.println("Test 6", "BRIGHT_Red", "BG_Blue");       // 3 String parameters: Value, Color of text, Color of background WITH a new line after
+        // This prints out the value given without a new line   
+        // This prints out the value given then a new line
+        // 2 String parameters: Value, Color of text
+        // 2 String parameters: Value, Color of text WITH a new line after
+        // 3 String parameters: Value, Color of text, Color of background
+        // 3 String parameters: Value, Color of text, Color of background WITH a new line after
         // Notice: for the colors, you must concatenate "BRIGHT_" or "BG_" to the input parameter to get the bright or background versions of the colors.
 
         // Feel free to comment out the test code above when you start your assignment
-
-        if(diff == 1){
-            /*
-                Difficulty level 1:
-                    The user will receive a series of colors as words (ex. "Red", "Blue", "Green", etc.)
-                    The user must type in the colors in the correct order
-
-                1. The game should repeat until the player loses
-                2. Each round, a new set of words is generated. The game starts at 1 word and adds one more word each round.
-                    - All words should be randomly chosen and stored to be checked later
-                    - Print each word when generated for the user to start to memorize
-                3. Tell the user to memorize the phrase then start the count down of 5 seconds
-                4. After the delay, print a bunch of new lines to clear the screen
-                5. Prompt the user to type in each color one at a time
-                    - Take in as many inputs as there words generated
-                    - Check all words against the generated list of words
-                    - ALL words should be taken in, THEN you can tell the user if they lost
-                    - This means checking and keeping track of if they lost or not
-                6. Once all inputs are taken in 
-                    - Tell the user if they lost or won
-                    - If they lost, print out the correct series of colors and end the game
-                    - If they won, start a new round with one more word (start back at step 1)
-            */
+        boolean lose = false;
+        int maxstrings = 1;
+        String[] TXT = new String[8];
+        TXT[0] = "BLACK";
+        TXT[1] = "RED";
+        TXT[2] = "GREEN";
+        TXT[3] = "YELLOW";
+        TXT[4] = "BLUE";
+        TXT[5] = "PURPLE";
+        TXT[6] = "CYAN";
+        TXT[7] = "WHITE";
+        String[] ans = new String[5];
+        String pans;
+        if(diff==1){
+           while(lose==false){
+            Colors.println("-----------------------------");
+           for(int i = 0; i < Math.min(5,maxstrings); i++){
+            
+           int rand = (int)(Math.random()*8);
+           Colors.println(TXT[rand]);
+           ans[i] = TXT[rand];
+            
+           }
+           Colors.println("-----------------------------");
+            Colors.println("Memorize the phrase above!");
+           delay(5);
+           for(int i = 0; i <250; i++){
+            Colors.println();
+           }
+           Colors.println("Please enter the words that you saw on separate lines!");
+           for(int i = 0; i < (Math.min(5,maxstrings)); i++){
+            pans = sc.nextLine();
+            if(!pans.equalsIgnoreCase(ans[i])){
+                Colors.println("You got it wrong! Try again!");
+                Colors.print("WORDS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans[b]+" ");
+                        }
+                lose = true;
+                break;
+                    }
+                }
+                if(lose==false){
+                Colors.println("You got it! Onto the next level!");
+                }
+                maxstrings++;
+           }
+        }
+        String[] ans2 = new String[5];
+        if(diff == 2){
+            while(lose==false){
+            Colors.println("-----------------------------");
+           for(int i = 0; i < Math.min(5,maxstrings); i++){
+            
+           int rand = (int)(Math.random()*8);
+           int rand2 = (int)(Math.random()*8);
+           Colors.println(TXT[rand],TXT[rand2]);
+           ans[i] = TXT[rand];
+           ans2[i] = TXT[rand2];
+            
+           }
+           Colors.println("-----------------------------");
+            Colors.println("Memorize the phrase above!");
+           int Q = (int)(Math.random()*2+1);
+           delay(5);
+           for(int i = 0; i <250; i++){
+            Colors.println();
+           }
+           if(Q==1){
+           Colors.println("Please enter the words that you saw on separate lines!");
+           for(int i = 0; i < (Math.min(5,maxstrings)); i++){
+            pans = sc.nextLine();
+            if(!pans.equalsIgnoreCase(ans[i])){
+                Colors.println("You got it wrong! Try again!");
+                Colors.print("WORDS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans[b]+" ");
+                        }
+                Colors.println();
+                Colors.print("TEXT COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans2[b]+" ");
+                }
+                lose = true;
+                break;
+                    }
+                }
+                if(lose==false){
+                Colors.println("You got it! Onto the next level!");
+                }
+                maxstrings++;
+           }
+           if(Q == 2){
+            Colors.println("Please enter the TEXT COLORS that you saw on separate lines!");
+           for(int i = 0; i < (Math.min(5,maxstrings)); i++){
+            pans = sc.nextLine();
+            if(!pans.equalsIgnoreCase(ans2[i])){
+                Colors.println("You got it wrong! Try again!");
+                Colors.print("WORDS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans[b]+" ");
+                        }
+                    Colors.println();
+                    Colors.print("TEXT COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans2[b]+" ");
+                }
+                lose = true;
+                break;
+                    }
+                }
+                if(lose==false){
+                Colors.println("You got it! Onto the next level!");
+                }
+                maxstrings++;
+           }
+           }
 
 
         }
-        else if(diff == 2){
-            /*
-                Difficulty level 2:
-                    This should act the same as difficulty level 1 with the following changes:
-                    The user will receive a series of colors as words AND as text color (ex. "Red", "Blue", "Green", etc.)
-                    The computer will randomly choose either to check the word as text or as a color
-                    The user must type in the colors in the correct order by either text or text color
-                    Both the text words and the text colors should be stored to be checked later
-            */
-
-
-        }
-        else if(diff == 3){
-            /*
-                Difficulty level 3:
-                    This should act the same as difficulty level 2 with the following changes:
-                    The user will receive a series of colors as words, as text color, and as background color (ex. "Red", "Blue", "Green", etc.)
-                    The computer will randomly choose either to check the word as text, as a color, or as background color
-                    The user must type in the colors in the correct order
-                    All of the text words, the text colors and the background colors should be stored to be checked later
-            */
+        String[] ans3 = new String[5];
+        if(diff == 3){
+            while(lose==false){
+            Colors.println("-----------------------------");
+           for(int i = 0; i < Math.min(5,maxstrings); i++){
+            
+           int rand = (int)(Math.random()*8);
+           int rand2 = (int)(Math.random()*8);
+           int rand3 = (int)(Math.random()*8);
+           Colors.println(TXT[rand],TXT[rand2],TXT[rand3]);
+           ans[i] = TXT[rand];
+           ans2[i] = TXT[rand2];
+           ans3[i] = TXT[rand3];
+            
+           }
+           Colors.println("-----------------------------");
+            Colors.println("Memorize the phrase above!");
+           int Q = (int)(Math.random()*3+1);
+           delay(5);
+           for(int i = 0; i <250; i++){
+            Colors.println();
+           }
+           if(Q==1){
+           Colors.println("Please enter the words that you saw on separate lines!");
+           for(int i = 0; i < (Math.min(5,maxstrings)); i++){
+            pans = sc.nextLine();
+            if(!pans.equalsIgnoreCase(ans[i])){
+                Colors.println("You got it wrong! Try again!");
+                Colors.print("WORDS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans[b]+" ");
+                        }
+                Colors.println();
+                Colors.print("TEXT COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans2[b]+" ");
+                }
+                    Colors.println();
+                    Colors.print("BACKGROUND COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans3[b]+" ");
+                }
+                lose = true;
+                break;
+                    }
+                }
+                if(lose==false){
+                Colors.println("You got it! Onto the next level!");
+                }
+                maxstrings++;
+           }
+           if(Q == 2){
+            Colors.println("Please enter the TEXT COLORS that you saw on separate lines!");
+           for(int i = 0; i < (Math.min(5,maxstrings)); i++){
+            pans = sc.nextLine();
+            if(!pans.equalsIgnoreCase(ans2[i])){
+                Colors.println("You got it wrong! Try again!");
+                Colors.print("WORDS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans[b]+" ");
+                        }
+                    Colors.println();
+                    Colors.print("TEXT COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans2[b]+" ");
+                }
+                    Colors.println();
+                    Colors.print("BACKGROUND COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans3[b]+" ");
+                }
+                lose = true;
+                break;
+                    }
+                }
+                if(lose==false){
+                Colors.println("You got it! Onto the next level!");
+                }
+                maxstrings++;
+           }
+           if(Q == 3){
+            Colors.println("Please enter the BACKGROUND COLORS that you saw on separate lines!");
+           for(int i = 0; i < (Math.min(5,maxstrings)); i++){
+            pans = sc.nextLine();
+            if(!pans.equalsIgnoreCase(ans3[i])){
+                Colors.println("You got it wrong! Try again!");
+                Colors.print("WORDS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans[b]+" ");
+                        }
+                    Colors.println();
+                    Colors.print("TEXT COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans2[b]+" ");
+                }
+                    Colors.println();
+                    Colors.print("BACKGROUND COLORS: ");
+                for(int b = 0; b < maxstrings; b++){
+                    Colors.print(ans3[b]+" ");
+                }
+                lose = true;
+                break;
+                    }
+                }
+                if(lose==false){
+                Colors.println("You got it! Onto the next level!");
+                }
+                maxstrings++;
+           }
         
 
         }
-        else {
+        if((diff != 1)&&(diff != 2)&&(diff != 3)) {
             System.out.println("Wrong number, try again.");
         }
+    }
     }
 
     // This method should take in a String array as a parameter and print out each element in the array.
